@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="row">
+		<h1>
+			My blog
+		</h1>
+		
+		<% @articles.each do |article| %>
+		<div class="well">
+			<p class="lead"><%= link_to article.title, article_path(article)%></p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<%= truncate(article.body, length: 150)%>
+			<div class="shape bubble">
+				<p><%= article.comments.count%></p>
+				</div>
+		</div>
+		</tr>
+		<% end %>
+	</div>
+	<div class="row">
+		<p>
+			<%= link_to 'New article', new_article_path, :class => 'btn btn-info' %>
+		</p>
+
+		</div>
+</div>
